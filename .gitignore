@@ -1,0 +1,16 @@
+# Cursor rules and configuration
+.cursor/
+
+# PRD files
+prds/
+
+# Specific rule files (if they exist outside .cursor/)
+convex-write-conflicts.mdc
+convex2.mdc
+dev2.mdc
+help.mdc
+rulesforconvex.mdc
+task.mdc
+write.mdc
+write.md
+
