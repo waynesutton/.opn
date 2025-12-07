@@ -37,6 +37,11 @@
           "url": "https://github.com/waynesutton"
         }
       ]
+    },
+    {
+      "title": "Stats",
+      "type": "text",
+      "content": "![GitHub Profile Views](https://gitviews.com/user/waynesutton.svg) ![GitHub Repo Views](https://gitviews.com/repo/waynesutton/.opn.svg)"
     }
   ]
 }

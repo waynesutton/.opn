@@ -1,5 +1,8 @@
 # .opn
 
+![GitHub Profile Views](https://gitviews.com/user/waynesutton.svg)
+![GitHub Repo Views](https://gitviews.com/repo/waynesutton/.opn.svg)
+
 Wayne Sutton's open-source bio page powered by [OPN.bio](https://opn.bio/).
 
 ## About This Repository
@@ -19,9 +22,11 @@ This is Wayne Sutton's OPN bio repository. OPN is an open-source bio page that l
 Helping developers and startups build faster with Convex and AI. Adventurer Motorcycle Rider.
 
 **Experience:**
+
 - Convex.dev - Community & Startup Programs (2023–Present)
 
 **Connect:**
+
 - [Twitter](https://x.com/waynesutton)
 - [LinkedIn](https://www.linkedin.com/in/waynesutton/)
 - [GitHub](https://github.com/waynesutton)
