@@ -40,8 +40,17 @@
     },
     {
       "title": "Stats",
-      "type": "text",
-      "content": "![GitHub Profile Views](https://gitviews.com/user/waynesutton.svg) ![GitHub Repo Views](https://gitviews.com/repo/waynesutton/.opn.svg)"
+      "type": "links",
+      "links": [
+        {
+          "title": "GitHub Profile Views",
+          "url": "https://gitviews.com/user/waynesutton"
+        },
+        {
+          "title": "This Repo Views",
+          "url": "https://gitviews.com/repo/waynesutton/.opn"
+        }
+      ]
     }
   ]
 }
