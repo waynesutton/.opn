@@ -1,12 +1,12 @@
 {
   "version": 1,
   "name": "Wayne Sutton",
-  "description": "Helping developers & startups to build faster with Convex and AI.  Adventurer Motorcycle Rider",
+  "description": "Community & Startup Programs at Convex.dev",
   "sections": [
     {
       "title": "About Me",
       "type": "text",
-      "content": "I work with startups to build developer communities through strategy, events, and operations at Convex.dev"
+      "content": "Helping developers & startups to build faster with Convex and AI.  Adventurer Motorcycle Rider"
     },
     {
       "title": "Experience",
@@ -16,7 +16,7 @@
           "title": "Convex.dev",
           "description": "Community & Startup Programs.",
           "url": "https://convex.dev",
-          "date": "2025–Present"
+          "date": "2023–Present"
         }
       ]
     },
@@ -25,8 +25,12 @@
       "type": "links",
       "links": [
         {
-          "title": "Website",
-          "url": "https://socialwayne.com"
+          "title": "Twitter",
+          "url": "https://x.com/waynesutton"
+        },
+        {
+          "title": "LinkedIn",
+          "url": "https://www.linkedin.com/in/waynesutton/"
         },
         {
           "title": "GitHub",
