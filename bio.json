@@ -37,20 +37,6 @@
           "url": "https://github.com/waynesutton"
         }
       ]
-    },
-    {
-      "title": "Stats",
-      "type": "links",
-      "links": [
-        {
-          "title": "GitHub Profile Views",
-          "url": "https://gitviews.com/user/waynesutton"
-        },
-        {
-          "title": "This Repo Views",
-          "url": "https://gitviews.com/repo/waynesutton/.opn"
-        }
-      ]
     }
   ]
 }
