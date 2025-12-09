@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "name": "Your Name",
+  "description": "A Short Description",
+  "sections": [
+    {
+      "title": "About Me",
+      "type": "text",
+      "content": "A longer description about you."
+    },
+    {
+      "title": "Experience",
+      "type": "list",
+      "items": [
+        {
+          "title": "Company One",
+          "description": "Software Engineer.",
+          "url": "https://example.com",
+          "date": "2025–Present"
+        }
+      ]
+    },
+    {
+      "title": "Socials",
+      "type": "links",
+      "links": [
+        {
+          "title": "Website",
+          "url": "https://example.com"
+        },
+        {
+          "title": "GitHub",
+          "url": "https://github.com/example"
+        }
+      ]
+    },
+    {
+      "title": "GitHub Stats",
+      "type": "gitviews",
+      "profileViews": true,
+      "repoViews": [
+        {
+          "username": "your-username",
+          "repo": ".opn"
+        }
+      ],
+      "style": "flat-square",
+      "labelColor": "#000",
+      "color": "#007acc"
+    }
+  ]
+}
+

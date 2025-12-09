@@ -1,82 +1,45 @@
-# .opn
+<div align="center">
+  <h2>OPN</h2>
+  <p>Your open-source bio page.</p>
+  <a href="https://opn.bio">Visit <strong>OPN</strong></a> | <a href="https://github.com/remvze/opn/tree/main/docs">Docs</a> | <a href="https://github.com/remvze/opn/tree/main/template">Template</a> 
+</div>
 
-![GitHub Profile Views](https://gitviews.com/user/waynesutton.svg)
-![GitHub Repo Views](https://gitviews.com/repo/waynesutton/.opn.svg)
+---
 
-Wayne Sutton's open-source bio page powered by [OPN.bio](https://opn.bio/).
+### 🪶 What Is OPN?
 
-## About This Repository
+**OPN** is an open-source bio platform that reads your profile data directly from a GitHub repository.
 
-This is Wayne Sutton's OPN bio repository. OPN is an open-source bio page that lives on GitHub. Instead of creating another account, you just need a public repository named `.opn` with a simple `bio.json` file inside. Your profile is generated automatically and stays fully in your control.
+All you need is:
 
-**Live profile:** [opn.bio/@waynesutton](https://opn.bio/@waynesutton)
+- A **public repo** named `.opn`
+- A `bio.json` file inside it
 
-## What is OPN?
-
-[OPN.bio](https://opn.bio/) is an open-source bio page platform. Your bio page is generated automatically from a `bio.json` file in your GitHub repository. No accounts, no signups, just version-controlled bio pages.
-
-## About Wayne Sutton
-
-**Wayne Sutton** - Community & Startup Programs at Convex.dev
-
-Helping developers and startups build faster with Convex and AI. Adventurer Motorcycle Rider.
-
-**Experience:**
-
-- Convex.dev - Community & Startup Programs (2023–Present)
-
-**Connect:**
-
-- [Twitter](https://x.com/waynesutton)
-- [LinkedIn](https://www.linkedin.com/in/waynesutton/)
-- [GitHub](https://github.com/waynesutton)
-
-## How OPN Works
+Your bio page becomes instantly available at:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    OPN.bio Flow                             │
-└─────────────────────────────────────────────────────────────┘
-
-1. Create Repository
-   ┌─────────────────────┐
-   │ GitHub Account       │
-   │ Create repo: .opn    │
-   └──────────┬──────────┘
-              │
-              ▼
-2. Add bio.json
-   ┌─────────────────────┐
-   │ .opn repository     │
-   │ └── bio.json        │
-   │     (your info)     │
-   └──────────┬──────────┘
-              │
-              ▼
-3. Auto-Generation
-   ┌─────────────────────┐
-   │ OPN.bio Platform    │
-   │ Reads bio.json      │
-   │ Generates profile   │
-   └──────────┬──────────┘
-              │
-              ▼
-4. Live Profile
-   ┌─────────────────────┐
-   │ opn.bio/@username   │
-   │ Your bio page       │
-   └─────────────────────┘
+https://opn.bio/@<your-github-username>
 ```
 
-## Getting Started with OPN
+Because your data lives entirely in your own repo, you **fully own and control it**. If you delete the repo, your profile disappears: no accounts, no lock-in.
 
-1. **Create a repository** - Create a public repository in your GitHub account called `.opn`
-2. **Add a bio file** - Add a `bio.json` file inside your `.opn` repository
-3. **Enter your info** - Fill `bio.json` with your information based on the schema
-4. **Your profile is ready** - Your bio page will be generated automatically and available at `opn.bio/@your-github-username`
+---
 
-## Resources
+### ⚙️ How It Works
 
-- [OPN.bio](https://opn.bio/) - Main website
-- [OPN on GitHub](https://github.com/opnbio) - Check OPN on GitHub
-- [Example Profile](https://opn.bio/@remvze) - See an example OPN profile
+1. Create a new public repository named `.opn`
+2. Add a `bio.json` file inside it (you can copy it from [here](https://github.com/remvze/opn/blob/main/template/bio.json))
+3. Fill in your data according to the [schema](https://github.com/remvze/opn/blob/main/docs/schema.md)
+
+Then visit your profile at:
+
+```
+https://opn.bio/@<your-github-username>
+```
+
+---
+
+### 🧩 Example
+
+- **Page:** [opn.bio/@remvze](https://opn.bio/@remvze)
+- **Source:** [github.com/remvze/.opn](https://github.com/remvze/.opn)

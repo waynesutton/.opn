@@ -1,0 +1,31 @@
+---
+import Layout from '@/layouts/layout.astro';
+import { Profile } from '@/components/profile';
+import { getSource } from '@/lib/source';
+import { getPosts } from '@/lib/posts';
+
+const username = Astro.params.username?.toLowerCase();
+
+if (!username) {
+  return Astro.rewrite('/404');
+}
+
+const source = await getSource(username);
+
+if (!source) {
+  return Astro.rewrite('/404');
+}
+
+// Fetch blog posts (optional - may not exist)
+const postsData = await getPosts(username);
+const posts = postsData?.posts || [];
+---
+
+<Layout title="Profile">
+  <Profile
+    client:load
+    source={source.url}
+    username={username}
+    posts={posts}
+  />
+</Layout>

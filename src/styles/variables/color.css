@@ -1,0 +1,70 @@
+:root {
+  --color-neutral-50: #09090b;
+  --color-neutral-100: #18181b;
+  --color-neutral-200: #27272a;
+  --color-neutral-300: #3f3f46;
+  --color-neutral-400: #52525b;
+  --color-neutral-500: #71717a;
+  --color-neutral-600: #a1a1aa;
+  --color-neutral-700: #d4d4d8;
+  --color-neutral-800: #e4e4e7;
+  --color-neutral-900: #f4f4f5;
+  --color-neutral-950: #fafafa;
+
+  /* Light */
+  --color-neutral-light-950: #09090b;
+  --color-neutral-light-900: #18181b;
+  --color-neutral-light-800: #27272a;
+  --color-neutral-light-700: #3f3f46;
+  --color-neutral-light-600: #52525b;
+  --color-neutral-light-500: #71717a;
+  --color-neutral-light-400: #a1a1aa;
+  --color-neutral-light-300: #d4d4d8;
+  --color-neutral-light-200: #e4e4e7;
+  --color-neutral-light-100: #f4f4f5;
+  --color-neutral-light-50: #fafafa;
+
+  /* Tan/Sepia - Custom palette */
+  --color-tan-bg: #faf8f5;
+  --color-tan-bg-secondary: #f5f3f0;
+  --color-tan-bg-hover: #ebe9e6;
+  --color-tan-text-primary: #1a1a1a;
+  --color-tan-text-secondary: #6b6b6b;
+  --color-tan-border: #e6e4e1;
+  --color-tan-accent: #8b7355;
+  --color-tan-interactive: #EB5601;
+  --color-tan-interactive-hover: #d14a01;
+  
+  /* Legacy tan variables mapped to new palette */
+  --color-tan-950: #1a1a1a;
+  --color-tan-900: #2a2a2a;
+  --color-tan-800: #3a3a3a;
+  --color-tan-700: #4a4a4a;
+  --color-tan-600: #6b6b6b;
+  --color-tan-500: #8b8b8b;
+  --color-tan-400: #a8a8a8;
+  --color-tan-300: #e6e4e1;
+  --color-tan-200: #ebe9e6;
+  --color-tan-100: #f5f3f0;
+  --color-tan-50: #faf8f5;
+
+  /* Foreground */
+  --color-foreground: var(--color-neutral-950);
+  --color-foreground-subtle: var(--color-neutral-600);
+  --color-foreground-subtler: var(--color-neutral-500);
+
+  /* Foreground Light */
+  --color-foreground-light: var(--color-neutral-light-950);
+  --color-foreground-subtle-light: var(--color-neutral-light-600);
+  --color-foreground-subtler-light: var(--color-neutral-light-500);
+
+  /* Foreground Tan */
+  --color-tan-foreground: var(--color-tan-text-primary);
+  --color-tan-foreground-subtle: var(--color-tan-text-secondary);
+  --color-tan-foreground-subtler: var(--color-tan-accent);
+
+  /* Background colors */
+  --color-background-dark: #09090b;
+  --color-background-light: #fafafa;
+  --color-background-tan: var(--color-tan-bg);
+}

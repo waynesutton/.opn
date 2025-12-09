@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "slug": "my-first-post",
+      "title": "My First Blog Post",
+      "date": "2025-01-15",
+      "excerpt": "This is a short description of my first blog post.",
+      "markdownFile": "my-first-post.md"
+    },
+    {
+      "slug": "another-post",
+      "title": "Another Post",
+      "date": "2025-01-20",
+      "excerpt": "Another interesting post about something.",
+      "markdownFile": "another-post.md"
+    }
+  ]
+}
+

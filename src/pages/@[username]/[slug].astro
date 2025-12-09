@@ -1,0 +1,283 @@
+---
+import Layout from '@/layouts/layout.astro';
+import { getPostBySlug } from '@/lib/posts';
+import { marked } from 'marked';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
+
+const username = Astro.params.username?.toLowerCase();
+const slug = Astro.params.slug;
+
+if (!username || !slug) {
+  return Astro.rewrite('/404');
+}
+
+const postData = await getPostBySlug(username, slug);
+
+if (!postData) {
+  return Astro.rewrite('/404');
+}
+
+const { metadata, content } = postData;
+const htmlContent = await marked(content);
+---
+
+<Layout title={`${metadata.title} — ${username}`}>
+  <div class="blog-container">
+    <div class="blog-top-bar">
+      <a href={`/@${username}`} class="back-link">← Back to profile</a>
+      <ThemeSwitcher client:load />
+    </div>
+    
+    <div class="blog-post">
+      <header class="blog-header">
+        <h1 class="blog-title">{metadata.title}</h1>
+        <p class="blog-author">By {username}</p>
+        {metadata.date && (
+          <time class="blog-date" datetime={metadata.date}>
+            {new Date(metadata.date).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        )}
+      </header>
+
+      <article class="blog-content" set:html={htmlContent} />
+    </div>
+  </div>
+</Layout>
+
+<style>
+  /* Container for blog post - 700px width */
+  .blog-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .blog-top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    margin-top: 40px;
+  }
+
+  .back-link {
+    font-size: var(--font-sm);
+    color: var(--color-foreground-subtle);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--color-foreground);
+  }
+
+  .blog-post {
+    padding: 20px 0 80px;
+  }
+
+  .blog-header {
+    margin-bottom: 48px;
+  }
+
+  .blog-title {
+    margin-bottom: 8px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-foreground);
+  }
+
+  .blog-author {
+    margin-bottom: 4px;
+    font-size: var(--font-sm);
+    color: var(--color-foreground-subtle);
+  }
+
+  .blog-date {
+    display: block;
+    font-size: var(--font-sm);
+    color: var(--color-foreground-subtler);
+  }
+
+  .blog-content {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-foreground-subtle);
+  }
+
+  .blog-content :global(h1),
+  .blog-content :global(h2),
+  .blog-content :global(h3),
+  .blog-content :global(h4),
+  .blog-content :global(h5),
+  .blog-content :global(h6) {
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-foreground);
+  }
+
+  .blog-content :global(h1) {
+    font-size: 1.75rem;
+  }
+
+  .blog-content :global(h2) {
+    font-size: 1.5rem;
+  }
+
+  .blog-content :global(h3) {
+    font-size: 1.25rem;
+  }
+
+  .blog-content :global(p) {
+    margin-bottom: 1.5em;
+  }
+
+  .blog-content :global(a) {
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .blog-content :global(a:hover) {
+    text-decoration-style: dotted;
+  }
+
+  .blog-content :global(ul),
+  .blog-content :global(ol) {
+    margin-bottom: 1.5em;
+    padding-left: 1.5em;
+  }
+
+  .blog-content :global(li) {
+    margin-bottom: 0.5em;
+  }
+
+  .blog-content :global(code) {
+    padding: 2px 6px;
+    font-family: var(--font-mono);
+    font-size: 0.875em;
+    background-color: var(--color-neutral-100);
+    border-radius: 4px;
+  }
+
+  .blog-content :global(pre) {
+    padding: 20px;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    background-color: var(--color-neutral-100);
+    border-radius: 8px;
+  }
+
+  .blog-content :global(pre code) {
+    padding: 0;
+    background: none;
+  }
+
+  .blog-content :global(blockquote) {
+    margin: 1.5em 0;
+    padding-left: 1em;
+    border-left: 3px solid var(--color-neutral-300);
+    color: var(--color-foreground-subtle);
+    font-style: italic;
+  }
+
+  .blog-content :global(strong) {
+    font-weight: 600;
+    color: var(--color-foreground);
+  }
+
+  .blog-content :global(em) {
+    font-style: italic;
+  }
+
+  .blog-content :global(hr) {
+    margin: 2em 0;
+    border: none;
+    border-top: 1px solid var(--color-neutral-200);
+  }
+
+  /* Theme-aware styles */
+  :global([data-theme="light"]) .back-link {
+    color: var(--color-foreground-subtle-light);
+  }
+
+  :global([data-theme="light"]) .back-link:hover {
+    color: var(--color-foreground-light);
+  }
+
+  :global([data-theme="light"]) .blog-title,
+  :global([data-theme="light"]) .blog-content :global(h1),
+  :global([data-theme="light"]) .blog-content :global(h2),
+  :global([data-theme="light"]) .blog-content :global(h3),
+  :global([data-theme="light"]) .blog-content :global(strong) {
+    color: var(--color-foreground-light);
+  }
+
+  :global([data-theme="light"]) .blog-author,
+  :global([data-theme="light"]) .blog-content {
+    color: var(--color-foreground-subtle-light);
+  }
+
+  :global([data-theme="light"]) .blog-date {
+    color: var(--color-foreground-subtler-light);
+  }
+
+  :global([data-theme="light"]) .blog-content :global(code),
+  :global([data-theme="light"]) .blog-content :global(pre) {
+    background-color: var(--color-neutral-light-100);
+  }
+
+  :global([data-theme="tan"]) .back-link {
+    color: var(--color-tan-text-secondary);
+  }
+
+  :global([data-theme="tan"]) .back-link:hover {
+    color: var(--color-tan-interactive);
+  }
+
+  :global([data-theme="tan"]) .blog-title,
+  :global([data-theme="tan"]) .blog-content :global(h1),
+  :global([data-theme="tan"]) .blog-content :global(h2),
+  :global([data-theme="tan"]) .blog-content :global(h3),
+  :global([data-theme="tan"]) .blog-content :global(strong) {
+    color: var(--color-tan-text-primary);
+  }
+
+  :global([data-theme="tan"]) .blog-author,
+  :global([data-theme="tan"]) .blog-content {
+    color: var(--color-tan-text-secondary);
+  }
+
+  :global([data-theme="tan"]) .blog-date {
+    color: var(--color-tan-accent);
+  }
+
+  :global([data-theme="tan"]) .blog-content :global(code),
+  :global([data-theme="tan"]) .blog-content :global(pre) {
+    background-color: var(--color-tan-bg-secondary);
+  }
+
+  :global([data-theme="tan"]) .blog-content :global(a) {
+    color: var(--color-tan-interactive);
+  }
+
+  :global([data-theme="tan"]) .blog-content :global(a:hover) {
+    color: var(--color-tan-interactive-hover);
+  }
+
+  :global([data-theme="tan"]) .blog-content :global(blockquote) {
+    border-left-color: var(--color-tan-accent);
+  }
+
+  :global([data-theme="tan"]) .blog-content :global(hr) {
+    border-top-color: var(--color-tan-border);
+  }
+</style>
+

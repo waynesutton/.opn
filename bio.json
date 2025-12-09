@@ -37,6 +37,20 @@
           "url": "https://github.com/waynesutton"
         }
       ]
+    },
+    {
+      "title": "GitHub Stats",
+      "type": "gitviews",
+      "profileViews": true,
+      "repoViews": [
+        {
+          "username": "waynesutton",
+          "repo": ".opn"
+        }
+      ],
+      "style": "flat-square",
+      "labelColor": "#000",
+      "color": "#007acc"
     }
   ]
 }
